@@ -1,10 +1,8 @@
 import React from 'react'
+import { Image } from 'react-native'
 
 // React Navigation
 import { useNavigation } from '@react-navigation/native';
-
-// Icons
-import { AntDesign } from '@expo/vector-icons';
 
 // React Hook Form
 import { useForm, Controller } from "react-hook-form"
@@ -24,6 +22,9 @@ import AuthForm from '../components/FormContainer';
 // Utils
 import { Colors, ValidationMessages } from '../../../common/utils/constants';
 import { isValidEmail } from '../../../common/utils/validations';
+
+// Images
+import GoogleIcon from '../../../../assets/images/google.png'
 
 const DividerContainer = styled.View`
     flex-direction: row;
@@ -122,7 +123,12 @@ const Login = () => {
                 variant={Colors.white}
                 borderColor={Colors.black}
                 text={Colors.black}
-                iconFront={<AntDesign name="google" size={15} color="black" />}
+                iconFront={
+                    <Image
+                        source={GoogleIcon}
+                        style={{ width: 20, height: 20, objectFit: 'contain' }}
+                    />
+                }
                 title="Continue with Google"
                 onPress={() => googleLogin()}
             />
