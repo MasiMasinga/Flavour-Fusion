@@ -25,6 +25,7 @@ import { isValidEmail } from '../../../common/utils/validations';
 
 // Images
 import GoogleIcon from '../../../../assets/images/google.png'
+import Logo from '../../../../assets/images/food.png'
 
 const DividerContainer = styled.View`
     flex-direction: row;
@@ -43,7 +44,7 @@ const Divider = styled.View`
 `;
 
 const Login = () => {
-    const { loading, login, googleLogin } = useAuth();
+    const { loading, login, handleGoogleLogin } = useAuth();
     const navigation = useNavigation();
     const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -58,6 +59,10 @@ const Login = () => {
 
     return (
         <AuthForm>
+            <Image
+                source={Logo}
+                style={{ width: 100, height: 100, objectFit: 'contain' }}
+            />
             <Text color={Colors.primary} size="30px" weight="700">
                 Login
             </Text>
@@ -130,7 +135,7 @@ const Login = () => {
                     />
                 }
                 title="Continue with Google"
-                onPress={() => googleLogin()}
+                onPress={handleGoogleLogin}
             />
         </AuthForm>
     )

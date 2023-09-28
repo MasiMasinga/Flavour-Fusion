@@ -1,7 +1,11 @@
 export const Colors = {
-    primary: "#0914B0",
+    primary: "#ffa361",
     accent: "#313BF5",
     black: "#000000",
+    green: "#3DA260",
+    red: "#E85A6C",
+    yellow: "#FFB100",
+    blue: "#51a6ca",
     white: "#ffffff",
     success: "#28a745",
     error: "#dc3545",

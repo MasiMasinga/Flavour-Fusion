@@ -30,11 +30,13 @@ const Input = ({
     onChangeText,
     value,
     onBlur,
-    numberOfLines = 1,
+    numberOfLines,
     placeholderTextColor,
     secureTextEntry,
     textAlign,
     borderColor = false,
+    onSubmitEditing,
+    multiline,
 }) => {
     return (
         <TextInputContainer borderColor={borderColor}>
@@ -44,9 +46,12 @@ const Input = ({
                 value={value}
                 onBlur={onBlur}
                 numberOfLines={numberOfLines}
+                multiline={multiline}
                 placeholderTextColor={placeholderTextColor}
                 secureTextEntry={secureTextEntry}
                 textAlign={textAlign}
+                borderColor={borderColor}
+                onSubmitEditing={onSubmitEditing}
             />
         </TextInputContainer>
     )

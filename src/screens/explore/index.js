@@ -1,12 +1,15 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
+
+// Components
+import ScreenLayout from '../../common/layout/ScreenLayout'
 
 const Explore = () => {
     return (
-        <View>
+        <ScreenLayout>
             <Text>Explore</Text>
-        </View>
-    )
+        </ScreenLayout>
+    );
 }
 
 export default Explore

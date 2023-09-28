@@ -38,28 +38,25 @@ const useAuth = () => {
 
     const login = async (data) => {
         setLoading(true);
-        navigation.navigate('MainTabNavigation');
-        setLoading(false);
-        // setLoading(true);
-        // const { error } = supabase.auth.signInWithPassword({
-        //     email: data.email,
-        //     password: data.password,
-        // });
+        const { error } = supabase.auth.signInWithPassword({
+            email: data.email,
+            password: data.password,
+        });
 
-        // if (error) {
-        //     Toast.show({
-        //         type: 'error',
-        //         text1: 'An error occurred',
-        //     });
-        //     setLoading(false);
-        // } else {
-        //     navigation.navigate('MainTabNavigation');
-        //     Toast.show({
-        //         type: 'success',
-        //         text1: 'Logged In successfully',
-        //     });
-        //     setLoading(false);
-        // }
+        if (error) {
+            Toast.show({
+                type: 'error',
+                text1: 'An error occurred',
+            });
+            setLoading(false);
+        } else {
+            navigation.navigate('MainTabNavigation');
+            Toast.show({
+                type: 'success',
+                text1: 'Logged In successfully',
+            });
+            setLoading(false);
+        }
     };
 
     const logout = async () => {
@@ -99,32 +96,33 @@ const useAuth = () => {
         }
     };
 
-    const googleLogin = async () => {
+    const handleGoogleLogin = async () => {
         setLoading(true);
-        const { data, error } = await supabase.auth.signInWithOAuth({
-            provider: 'google',
-            options: {
-                queryParams: {
-                    access_type: 'offline',
-                    prompt: 'consent',
-                },
-            },
-        });
+        navigation.navigate('MainTabNavigation');
+        // const { data, error } = await supabase.auth.signInWithOAuth({
+        //     provider: 'google',
+        //     options: {
+        //         queryParams: {
+        //             access_type: 'offline',
+        //             prompt: 'consent',
+        //         },
+        //     },
+        // });
 
-        if (data) {
-            navigation.navigate('MainTabNavigation');
-            Toast.show({
-                type: 'success',
-                text1: 'Logged In successfully',
-            });
-            setLoading(false);
-        } else if (error) {
-            Toast.show({
-                type: 'error',
-                text1: 'An error occurred',
-            });
-            setLoading(false);
-        }
+        // if (data) {
+        //     navigation.navigate('MainTabNavigation');
+        //     Toast.show({
+        //         type: 'success',
+        //         text1: 'Logged In successfully',
+        //     });
+        //     setLoading(false);
+        // } else if (error) {
+        //     Toast.show({
+        //         type: 'error',
+        //         text1: 'An error occurred',
+        //     });
+        //     setLoading(false);
+        // }
     }
 
     return {
@@ -133,7 +131,7 @@ const useAuth = () => {
         login,
         logout,
         forgotPassword,
-        googleLogin,
+        handleGoogleLogin,
     }
 }
 

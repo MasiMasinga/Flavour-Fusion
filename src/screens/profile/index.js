@@ -1,11 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
+// Components
+import ScreenLayout from '../../common/layout/ScreenLayout'
+
 const Profile = () => {
     return (
-        <View>
+        <ScreenLayout>
             <Text>Profile</Text>
-        </View>
+        </ScreenLayout>
     )
 }
 

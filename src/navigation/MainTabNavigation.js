@@ -8,12 +8,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Navigation Components
 import ProfileNavigation from './ProfileNavigation';
-
-// Utils
-import { Colors } from '../common/utils/constants';
 import ExploreNavigation from './ExploreNavigation';
 import MyRecipesNavigation from './MyRecipesNavigation';
 import FavoritesNavigation from './FavoritesNavigation';
+
+// Utils
+import { Colors } from '../common/utils/constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,8 +32,8 @@ const MainTabNavigation = () => {
                 options={{
                     tabBarLabel: 'Explore',
                     tabBarIcon: () => (
-<Feather name="search" size={30} color={Colors.primary} />
-),
+                        <Feather name="search" size={30} color={Colors.primary} />
+                    ),
                 }}
             />
             <Tab.Screen

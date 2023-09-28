@@ -1,11 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
+// Components
+import ScreenLayout from '../../common/layout/ScreenLayout'
+
 const Favorites = () => {
     return (
-        <View>
+        <ScreenLayout>
             <Text>Favorites</Text>
-        </View>
+        </ScreenLayout>
     )
 }
 

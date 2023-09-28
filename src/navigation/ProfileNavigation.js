@@ -4,6 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Screens
 import Profile from '../screens/profile';
 
+// Utils
+import { Colors } from '../common/utils/constants';
+
 const ProfileStack = createStackNavigator();
 
 const ProfileNavigation = () => {
@@ -12,7 +15,15 @@ const ProfileNavigation = () => {
             <ProfileStack.Screen
                 name="Profile"
                 component={Profile}
-                options={{ headerShown: false }}
+                options={{
+                    headerTitle: 'Profile',
+                    headerTitleAlign: 'center',
+                    headerTintColor: Colors.white,
+                    headerStyle: {
+                        backgroundColor: Colors.primary,
+                    },
+                    headerLeft: null,
+                }}
             />
         </ProfileStack.Navigator>
     );
