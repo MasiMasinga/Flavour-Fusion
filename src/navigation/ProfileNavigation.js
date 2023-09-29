@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
 import Profile from '../screens/profile';
+import UpdateUserDetails from '../screens/profile/components/UpdateUserDetails';
 
 // Utils
 import { Colors } from '../common/utils/constants';
@@ -23,6 +24,18 @@ const ProfileNavigation = () => {
                         backgroundColor: Colors.primary,
                     },
                     headerLeft: null,
+                }}
+            />
+            <ProfileStack.Screen
+                name="UpdateUserDetails"
+                component={UpdateUserDetails}
+                options={{
+                    headerTitle: 'Update User Details',
+                    headerTitleAlign: 'center',
+                    headerTintColor: Colors.white,
+                    headerStyle: {
+                        backgroundColor: Colors.primary,
+                    },
                 }}
             />
         </ProfileStack.Navigator>

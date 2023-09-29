@@ -9,6 +9,7 @@ export const ScreenContainer = styled.View`
     justify-content: center;
     align-items: center;
     background-color: ${props => props.bgColor ? props.bgColor : Colors.white};
+    padding: 20px;
 `
 
 const ScreenLayout = ({ children, bgColor }) => {
