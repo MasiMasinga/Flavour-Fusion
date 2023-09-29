@@ -4,6 +4,9 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+// Context
+import { RecipeProvider } from '../screens/myRecipes/context/RecipeContext';
+
 // Components
 import AuthNavigation from './AuthNavigation';
 
@@ -11,7 +14,9 @@ const RootNavigation = () => {
     return (
         <SafeAreaProvider>
             <NavigationContainer>
-                <AuthNavigation />
+                <RecipeProvider>
+                    <AuthNavigation />
+                </RecipeProvider>
             </NavigationContainer>
         </SafeAreaProvider>
     )

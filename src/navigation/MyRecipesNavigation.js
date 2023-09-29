@@ -4,10 +4,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Components
-import MyRecipes from '../screens/myRecipes';
+import MyRecipes from '../screens/myRecipes/index';
 import AddRecipe from '../screens/myRecipes/containers/AddRecipe';
-import EditRecipe from '../screens/myRecipes/containers/EditRecipe';
-import DeleteRecipe from '../screens/myRecipes/containers/DeleteRecipe';
 
 // Utils
 import { Colors } from '../common/utils/constants';
@@ -36,30 +34,6 @@ const MyRecipesNavigation = () => {
                 component={AddRecipe}
                 options={{
                     headerTitle: 'Add Recipe',
-                    headerTitleAlign: 'center',
-                    headerTintColor: Colors.white,
-                    headerStyle: {
-                        backgroundColor: Colors.primary,
-                    },
-                }}
-            />
-            <MyRecipesStack.Screen
-                name="EditRecipe"
-                component={EditRecipe}
-                options={{
-                    headerTitle: 'Edit Recipe',
-                    headerTitleAlign: 'center',
-                    headerTintColor: Colors.white,
-                    headerStyle: {
-                        backgroundColor: Colors.primary,
-                    },
-                }}
-            />
-            <MyRecipesStack.Screen
-                name="DeleteRecipe"
-                component={DeleteRecipe}
-                options={{
-                    headerTitle: 'Delete Recipe',
                     headerTitleAlign: 'center',
                     headerTintColor: Colors.white,
                     headerStyle: {
