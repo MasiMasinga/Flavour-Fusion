@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // Styled Components
 import styled from 'styled-components/native';
@@ -12,21 +12,21 @@ import { AntDesign } from '@expo/vector-icons';
 // Utils
 import { Colors } from '../../common/utils/constants';
 
+// Components
+import RecipeList from './containers/RecipeList';
+
 const Container = styled.View`
   flex: 1;
   background-color: ${Colors.white};
 `;
 
 const ButtonContainer = styled.View`
-  flex: 1;
-  justify-content: center; 
-  align-items: center;
   padding: 20px;
 `;
 
 const Button = styled.TouchableOpacity`
   width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: ${(props) => props.backgroundColor || '#2ecc71'}; 
   border-radius: 8px;
   justify-content: center;
@@ -36,8 +36,14 @@ const Button = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
   color: ${Colors.white};
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
+`;
+
+const Divider = styled.View`
+  width: 100%;
+  height: 1px;
+  background-color: ${Colors.grey};
 `;
 
 function MyRecipes() {
@@ -53,25 +59,11 @@ function MyRecipes() {
                     <ButtonText>
                         Add Recipe
                     </ButtonText>
-                    <AntDesign name="plus" size={24} color={Colors.white} />
+                    <AntDesign name="plus" size={14} color={Colors.white} />
                 </Button>
-                <Button
-                    backgroundColor={Colors.yellow}
-                    onPress={() => navigation.navigate('EditRecipe')}
-                >
-                    <ButtonText>Edit Recipe</ButtonText>
-                    <AntDesign name="edit" size={24} color={Colors.white} />
-                </Button>
-                <Button
-                    backgroundColor={Colors.red}
-                    onPress={() => navigation.navigate('DeleteRecipe')}
-                >
-                    <ButtonText>
-                        Delete Recipe
-                    </ButtonText>
-                    <AntDesign name="delete" size={24} color={Colors.white} />
-                </Button>
+                <Divider />
             </ButtonContainer>
+            <RecipeList />
         </Container>
     );
 }

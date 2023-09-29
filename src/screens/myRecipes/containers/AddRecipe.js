@@ -63,7 +63,6 @@ const AddButton = styled.TouchableOpacity`
 `;
 
 const DeleteButton = styled.TouchableOpacity`
-  background-color: ${Colors.red};
   padding: 5px 10px;
   border-radius: 5px;
   margin-top: 10px;
@@ -126,7 +125,6 @@ const AddRecipe = () => {
                 ],
             );
         });
-
         return unsubscribe;
     }, [navigation]);
 
@@ -273,7 +271,8 @@ const AddRecipe = () => {
                                     onChangeText={(text) => handleIngredientChange(text, index)}
                                 />
                                 <DeleteButton onPress={() => deleteIngredient(index)}>
-                                    <ButtonLabelText>Delete</ButtonLabelText>
+                                    {/* <ButtonLabelText>Delete</ButtonLabelText> */}
+                                    <AntDesign name="delete" size={24} color={Colors.black} />
                                 </DeleteButton>
                             </Row>
                         ))}
